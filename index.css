@@ -1,0 +1,264 @@
+:root {
+    --primary-color: rgb(0, 0, 149);
+    --secundary-color: rgb(0, 76, 255);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: #0F172A;
+}
+
+#first {
+    width: 100%;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#first h2 {
+    color: white;
+    font-size: 45px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 70px 0px -30px 10px;
+}
+
+#first h3 {
+    color: white;
+    font-size: 35px;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin: 0 10px 20px 10px;
+}
+
+#first span {
+    color: white;
+    font-size: 60px;
+}
+
+.scroll-suave input {
+    background-color: transparent;
+    min-width: 100px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    padding: 7px 25px;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    box-shadow: -2px 2px 3px rgb(0, 0, 0);
+    outline: none;
+    position: relative;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+.scroll-suave input:active {
+    outline: 1px solid rgb(255, 255, 255);
+}
+
+main {
+    position: relative;
+    left: 50%;
+    top: 150px;
+    transform: translate(-50%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    width: 650px;
+    margin-bottom: 70px;
+}
+
+#quiz {
+    counter-reset: quiz-item;
+}
+
+.quiz-item {
+    margin-top: 24px;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#NumberQuestion {
+    position: absolute;
+    top: 22.5px;
+    left: 30.5px;
+    color: rgb(255, 255, 255);
+}
+
+.quiz-item h3 {
+    margin-top: 0;
+    padding: 16px 20px;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #1e293b;
+}
+
+.quiz-item h3:before {
+    content: " ";
+    background-color: #475569;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.quiz-item dl {
+    padding: 20px 24px;
+    display: grid;
+    gap: 8px;
+}
+
+.quiz-item dl dt {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e3f0
+}
+
+input[type=radio] {
+    all: unset;
+    border: 1px solid var(--primary-color);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+input[type=radio]:checked {
+    border: 1px solid var(--secundary-color);
+}
+
+input[type=radio]:checked:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    background-color: var(--secundary-color);
+    border-radius: 50%;
+} 
+
+#container-comandos {
+    display: flex;
+    gap: 20px;
+}
+
+.next {
+    width: 126.54px;
+    min-height: 45.98px;
+    background-color: rgba(0, 26, 255, 0.024);
+    border: 1px solid var(--secundary-color);
+    border-radius: 2px;
+    padding: 8px 15px;
+    font-size: 18px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: white;
+    box-shadow: -2px 2px 0px var(--primary-color);
+    position: relative;
+    bottom: 10px;
+    left: 25px;
+    outline: none;
+    transition: all 50ms ease-in-out;
+}
+
+.next:active {
+    transform: translate(-1px, 1px);
+    box-shadow: -1px 1px 0 var(--primary-color);
+}
+
+.back {
+    width: 126.54px;
+    height: 45.98px;
+    background-color: rgba(0, 26, 255, 0.024);
+    border: 1px solid var(--secundary-color);
+    border-radius: 2px;
+    padding: 8px 15px;
+    font-size: 18px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: white;
+    box-shadow: -2px 2px 0px var(--primary-color);
+    position: relative;
+    bottom: 10px;
+    left: 25px;
+    outline: none;
+    transition: all 50ms ease-in-out;
+}
+
+.back:active {
+    transform: translate(-1px, 1px);
+    box-shadow: -1px 1px 0 var(--primary-color);
+}
+
+.hidden {
+    opacity: 0;
+    height: 100vh;
+    filter: blur(15px);
+    transition: all 2000ms ease-in-out;
+    transform: translateX(-100%);
+}
+
+.show {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0px);
+    transition: all 2000ms ease-in-out;
+}
+
+#acertos {
+    text-align: center;
+    background-color: #0F172A;
+    width: 100vw;
+    height: 100vh;
+    padding: 12px;
+    color: white;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+#cash-box {
+    width: 250px;
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+    background-color: var(--primary-color);
+    box-shadow: -3px 3px 5px rgb(0, 0, 35);
+    text-shadow: -2px 2px 3px rgb(0, 0, 62);
+    font-size: 23px;
+    letter-spacing: 1.5px;
+    font-family: Arial, Helvetica, sans-serif;
+}

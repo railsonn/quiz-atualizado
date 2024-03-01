@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section class="hidden" id="first">
+        <div id="title">
+            <h2>Responda o Quiz<h2>
+            <h3>Sobre Carros</h3>
+            <span>&dArr;</span>
+        </div>
+
+        <div id="button-title">
+            <a href="#last-one" class="scroll-suave"><input type="button" value="Quiz"></a>
+        </div>
+    </section>
+
+    <section class="hidden" id="last-one">
+        <main>
+            <div id="quiz">
+                <div id="container">
+                    <div class="quiz-item">
+                        <div id="NumberQuestion">
+
+                        </div>
+                        <h3 class="pergunta">pergunta</h3>
+                        <dl>
+                            <dt>
+                                <input type="radio" id="radio">
+
+                                <label for="">
+                                    <span>resposta</span>
+                                </label>
+                            </dt>
+                        </dl>
+
+                        <div id="container-comandos">
+                            <div>
+                                <input type="button" class="next" value="próxima &rarr;" onclick="passNext()">
+                            </div>
+
+                            <div>
+                                <input type="button" class="back" value="&larr; Voltar 1" onclick="passBack()">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    
+    <div id="acertos">
+        <div id="cash-box">
+            <strong>Certas</strong>
+            <span>0/10</span>
+        </div>
+    </div>
+</body>
+</html>
