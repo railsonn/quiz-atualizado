@@ -188,6 +188,7 @@ let acertos = new Set();
         cloneTemplate.style.display = 'none'
         quiz.querySelector('#div-0').style.display = 'block'
 }
+
     quiz.querySelector('#button-next9').value = 'Enviar'
     quiz.querySelector('#button-back0').style.display = 'none'
     template.remove()
