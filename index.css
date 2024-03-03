@@ -87,15 +87,61 @@ main {
 
 .quiz-item {
     margin-top: 24px;
-    border: 1px solid #475569;
+    border: 0.5px solid #475569;
     border-radius: 6px;
     overflow: hidden;
+    position: relative;
+    width: 650px;
+    height: 270.39px;
+}
+
+.quiz-item .border:first-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, blue);
+    animation: animar1 2s linear infinite;
+}
+
+.quiz-item .border:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent, blue);
+    animation: animar2 2s linear infinite;
+    animation-delay: 1s;
+}
+
+.quiz-item .border:nth-of-type(3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to left, transparent, blue);
+    animation: animar3 2s linear infinite;
+    animation-delay: 2s;
+}
+
+.quiz-item .border:last-of-type {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1.5px;
+    height: 100%;
+    background-image: linear-gradient(to top, transparent, blue);
+    animation: animar4 2s linear infinite;
+    animation-delay: 3s;
 }
 
 #NumberQuestion {
     position: absolute;
-    top: 22.5px;
-    left: 30.5px;
+    top: 21.5px;
+    left: 30px;
     color: rgb(255, 255, 255);
 }
 
@@ -108,6 +154,7 @@ main {
     gap: 12px;
     background-color: #1e293b;
 }
+
 
 .quiz-item h3:before {
     content: " ";
@@ -261,4 +308,46 @@ input[type=radio]:checked:before {
     font-size: 23px;
     letter-spacing: 1.5px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+@keyframes animar1 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform:  translateX(100%);
+    }
+}
+
+@keyframes animar2 {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform:  translateY(100%);
+    }
+}
+
+@keyframes animar3 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform:  translateX(-100%);
+    }
+}
+
+@keyframes animar4 {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform:  translateY(-100%);
+    }
 }

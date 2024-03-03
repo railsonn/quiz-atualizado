@@ -192,3 +192,4 @@ let acertos = new Set();
     quiz.querySelector('#button-next9').value = 'Enviar'
     quiz.querySelector('#button-back0').style.display = 'none'
     template.remove()
+    
