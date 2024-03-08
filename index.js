@@ -115,6 +115,7 @@ let acertos = new Set();
 
         NumberQuestion++
 
+        console.log(cloneTemplate)
 
         let NumberQuestionDiv = cloneTemplate.querySelector('#NumberQuestion')
         cloneTemplate.querySelector('#NumberQuestion').textContent = (NumberQuestion)
@@ -150,16 +151,42 @@ let acertos = new Set();
 
                 if(SelectionChecker >= 1) {
                     if(QuestionNumber < 9 || QuestionNumber == 9) {
+                        // Funcao de mostrar uma pergunta por vez
                         QuestionNumber++;
                         quiz.querySelector(`#div-${QuestionNumber}`).style.display = 'block'
 
                         quiz.querySelector(`#div-${QuestionNumber - 1}`).style.display = 'none';  
                         SelectionChecker = 0;
-                        console.log(QuestionNumber)
+
+                        // Funcao de deixar o border invisivel enquanto não chega a vez dele de ser exibido
+                        quiz.querySelectorAll(`#div-${QuestionNumber} .quiz-item .border`)[1].style.visibility = 'hidden'
+                        setTimeout(() => {
+                            quiz.querySelectorAll(`#div-${QuestionNumber} .quiz-item .border`)[1].style.visibility = 'visible'
+                        }, 1000)
+
+                        quiz.querySelectorAll(`#div-${QuestionNumber} .quiz-item .border`)[2].style.visibility = 'hidden'
+                        setTimeout(() => {
+                            quiz.querySelectorAll(`#div-${QuestionNumber} .quiz-item .border`)[2].style.visibility = 'visible'
+                        }, 2002)
+
+                        quiz.querySelectorAll(`#div-${QuestionNumber} .quiz-item .border`)[3].style.visibility = 'hidden'                   
+                        setTimeout(() => {
+                            quiz.querySelectorAll(`#div-${QuestionNumber} .quiz-item .border`)[3].style.visibility = 'visible'
+                        }, 3002)
+                    
                     } 
                 } else {
                     return alert('Escolha uma opção ou marque denovo')
                 }    
+
+                cloneTemplate.querySelectorAll('.border')[1].style.backgroundColor = 'transparent'
+                console.log(cloneTemplate.querySelectorAll('.border')[1])
+                console.log(QuestionNumber)
+
+                
+                // if(QuestionNumber > 0) {
+                //     console.log(`E MAIOR`)
+                // }
             }
 
             function passBack() {
